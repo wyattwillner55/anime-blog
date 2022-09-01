@@ -15,11 +15,14 @@ function searchAndDisplay() {
 //function that calls all the relevant functions for setting up the homepage top anime display
 function setUpHomepage() {
     getTopAnime();
-    display0();
+    for (i = 0; i < 4; i++) {
+        displayHomepageAnime(i);
+    }
+    /*display0();
     display1(); 
     display2();
     display3();
-    display4();
+    display4();*/
 }
 
 //fetches the top anime from jikan api
