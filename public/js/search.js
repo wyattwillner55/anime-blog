@@ -54,11 +54,12 @@ function displaySearch() {
 //displays the top anime in their locations
 function displayHomepageAnime(animeNumber){
     let animeObj = `${animeNumber}`;
-    let animeImage = animeNumber + 'i';
+    let animeImage = `${animeNumber}` + 'i';
     document.getElementById(animeObj).setAttribute('href' , topAnime[animeNumber].url);
     document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber].title);
-    document.getElementById(animeObj).setAttribute('src' , topAnime[animeNumber].image_url);
+    document.getElementById(animeImage).setAttribute('src' , topAnime[animeNumber].image_url);
 }
+
 
 //clears display
 function clearDisplayData() {
