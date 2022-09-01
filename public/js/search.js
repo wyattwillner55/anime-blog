@@ -55,6 +55,7 @@ function displaySearch() {
 function displayHomepageAnime(animeNumber){
     let animeObj = `${animeNumber}`;
     let animeImage = `${animeNumber}` + 'i';
+    console.log(animeNumber);
     console.log(topAnime[animeNumber].url);
     console.log(topAnime[animeNumber].title);
     console.log(topAnime[animeNumber].image);
