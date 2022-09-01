@@ -24,6 +24,7 @@ function setUpHomepage() {
 async function getTopAnime(){
     const response = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
     topAnime = await response.json();
+    console.log(topAnime);
     topAnime = topAnime.slice(0,4);
 }
 
