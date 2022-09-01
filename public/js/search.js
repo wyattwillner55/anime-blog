@@ -15,7 +15,7 @@ function searchAndDisplay() {
 //function that calls all the relevant functions for setting up the homepage top anime display
 function setUpHomepage() {
     getTopAnime();
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < topAnime.length; i++) {
         displayHomepageAnime(i);
     }
 }
@@ -25,7 +25,7 @@ async function getTopAnime(){
     const response = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
     topAnime = await response.json();
     console.log(topAnime);
-    topAnime = topAnime.top.slice(0,4);
+    topAnime = topAnime.top.slice(0,5);
 }
 
 //searches the api for the anime
@@ -55,9 +55,9 @@ function displaySearch() {
 function displayHomepageAnime(animeNumber){
     let animeObj = `${animeNumber}`;
     let animeImage = animeNumber + 'i';
-    document.getElementById(animeObj).setAttribute('href' , topAnime[animeNumber.url]);
-    document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber.title]);
-    document.getElementById(animeObj).setAttribute('src' , topAnime[animeNumber.image_url]);
+    document.getElementById(animeObj).setAttribute('href' , topAnime[animeNumber].url);
+    document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber].title);
+    document.getElementById(animeObj).setAttribute('src' , topAnime[animeNumber].image_url);
 }
 
 //clears display
