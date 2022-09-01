@@ -23,7 +23,12 @@ function setUpHomepage() {
 //fetches the top anime from jikan api
 function getTopAnime(){
     fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
-    .then(topAnime = response.JSON().slice(0,4));
+    .then(function(response){
+        if (!response.ok) {
+            throw response.JSON();
+        }
+    topAnime = response.JSON().slice(0,4);
+    })
 }
 
 //searches the api for the anime
