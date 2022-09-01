@@ -1,0 +1,44 @@
+{{!-- modified from UPENN-VIRT-FSF-FT-07-2022-U-LOLC\14-MVC\01-Activities\28-Stu_Mini-Project\Main\views\profile.handlebars --}}
+<div class="row mt-4 profile-page">
+  <div id="Text" class="col-md-6">
+  <div class="TXT">
+    <h2 class="hello">Hello {{username}}</h2>
+    <h3 class="nR">Create a new review:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="project-name">Anime Title:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">Review:</label>
+        <textarea name="textarea" rows="10" cols="50" class="form-input" id="project-desc" name="project-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+      </div>
+    </form>
+  </div>
+{{log this}}
+  {{#if posts.length}}
+  <div class="col-md-6 project-list">
+    <h3 class="new-review reviews-word">Reviews:</h3>
+
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-8 new-review">
+        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+        <p class="card-body">{{post.post_text}}</p>
+      </div>
+      <div class="col-md-4 new-review">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+
+<script src="./js/profile.js"></script>

@@ -1,0 +1,111 @@
+/* CSS for the nav bar */
+
+/* *{
+    background-color: bisque;
+} */
+
+nav {
+    background-color: bisque;
+    border-bottom: rgb(255, 255, 255) solid 2px;
+}
+
+.nav-search {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#search-btn {
+    background-color: white;
+    color: black;
+    margin-left: 1%;
+}
+
+#search-input {
+    width: 50%;
+    margin-left: 20%;
+}
+
+.nav-links {
+    display: flex;
+    text-decoration: none;
+    font-size: 25px;
+    margin-right: 25%;
+}
+
+.navLinks {
+    padding-right: 15%;
+}
+/* above is css for the nav bar */
+
+header {
+    display: flex;
+    padding-right: 30% ;
+}
+
+.title {
+    text-align: center;
+    background-color: bisque;
+}
+
+.Img {
+/* display: flex;
+text-decoration: none;
+margin-left: 27%; */
+display: grid;
+grid-auto-flow : column;
+grid-column-gap: 150px;
+
+}
+
+.notification.is-info {
+    background-color: bisque;
+    color: #fff;
+}
+
+.One{
+    font-size: larger;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* above code is css for the homepage handlebar */
+
+.TXT{
+    display: grid;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hello{
+    color: black;
+    font-weight: bold;
+    
+
+}
+
+.nR{
+color: black;
+font-weight: bold;
+text-align: center;
+}
+
+.new-review {
+padding-left: 10%;
+}
+
+.reviews-word{
+font-size: larger;
+font-weight: bold;
+font-family: 'Courier New', Courier, monospace
+}
+
+
+/* above code is css for the profile handlebar */
+
+
