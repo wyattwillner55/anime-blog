@@ -55,6 +55,9 @@ function displaySearch() {
 function displayHomepageAnime(animeNumber){
     let animeObj = `${animeNumber}`;
     let animeImage = `${animeNumber}` + 'i';
+    console.log(topAnime[animeNumber].url);
+    console.log(topAnime[animeNumber].title);
+    console.log(topAnime[animeNumber].image);
     document.getElementById(animeObj).setAttribute('href' , topAnime[animeNumber].url);
     document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber].title);
     document.getElementById(animeImage).setAttribute('src' , topAnime[animeNumber].image_url);
