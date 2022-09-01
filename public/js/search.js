@@ -29,9 +29,7 @@ function setUpHomepage() {
 async function getTopAnime(){
     const response = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
     topAnime = await response.json();
-    console.log(topAnime);
-    topAnime = topAnime.top.slice(0,5);
-    topAnime = JSON.parse(topAnime);
+    topAnime = JSON.parse(topAnime.top.slice(0,5));
 }
 
 //searches the api for the anime
@@ -62,9 +60,9 @@ function displayHomepageAnime(animeNumber){
     let animeObj = `${animeNumber}`;
     let animeImage = `${animeNumber}` + 'i';
     console.log(animeNumber);
-    console.log(topAnime.data[animeNumber].url);
-    console.log(topAnime.data[animeNumber].title);
-    console.log(topAnime.data[animeNumber].image);
+    console.log(topAnime[animeNumber].url);
+    console.log(topAnime[animeNumber].title);
+    console.log(topAnime[animeNumber].image);
     document.getElementById(animeObj).setAttribute('href' , topAnime[animeNumber].url);
     document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber].title);
     document.getElementById(animeImage).setAttribute('src' , topAnime[animeNumber].image_url);
