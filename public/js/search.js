@@ -15,7 +15,7 @@ function searchAndDisplay() {
 //function that calls all the relevant functions for setting up the homepage top anime display
 function setUpHomepage() {
     getTopAnime();
-    for (i = 0; i < topAnime.length; i++) {
+    for (i = 0; i < 4; i++) {
         displayHomepageAnime(i);
     }
 }
