@@ -61,7 +61,7 @@ function displaySearch() {
 //displays the top anime in their locations
 function displayHomepageAnime(animeNumber){
     const anime = JSON.parse(window.localStorage.getItem('Anime'));
-    let animeObj = '#' + animeNumber;
+    let animeObj = '\'#' + animeNumber + '\'';
     let animeImage = animeNumber + 'i';
     document.querySelector(animeObj).setAttribute('href' , topAnime[animeNumber.url]);
     document.querySelector(animeObj).setAttribute('target' , topAnime[animeNumber.title]);
