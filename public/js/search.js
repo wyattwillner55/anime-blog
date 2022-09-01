@@ -25,9 +25,9 @@ function getTopAnime(){
     fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
     .then(function(response){
         if (!response.ok) {
-            throw response.JSON();
+            throw response.json();
         }
-    topAnime = response.json().slice(0,4);
+    topAnime = response.JSON.slice(0,4);
     })
 }
 
@@ -55,16 +55,16 @@ function displaySearch() {
     document.querySelector('#malScore').textContent = 'Rating:' + searchData.score;
     document.querySelector('#malUrl').setAttribute('href' , searchData.url);
     document.querySelector('#malUrl').setAttribute('target' , searchData.title);
-    document.querySelector('aPoster').setAttribute('src' , searchData.image_url);
+    document.querySelector('#aPoster').setAttribute('src' , searchData.image_url);
 }
 
 //displays the top anime in their locations
 function displayHomepageAnime(animeNumber){
-    let animeObj = `#${animeNumber}`;
+    let animeObj = `${animeNumber}`;
     let animeImage = animeNumber + 'i';
-    document.querySelector(animeObj).setAttribute('href' , topAnime[animeNumber.url]);
-    document.querySelector(animeObj).setAttribute('target' , topAnime[animeNumber.title]);
-    document.querySelector(animeObj).setAttribute('src' , topAnime[animeNumber.image_url]);
+    document.getElementById(animeObj).setAttribute('href' , topAnime[animeNumber.url]);
+    document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber.title]);
+    document.getElementById(animeObj).setAttribute('src' , topAnime[animeNumber.image_url]);
 }
 
 //clears display
@@ -75,7 +75,7 @@ function clearDisplayData() {
     document.querySelector('#malScore').textContent = 'Rating:' + '';
     document.querySelector('#malUrl').setAttribute('href' , '');
     document.querySelector('#malUrl').setAttribute('target' , '');
-    document.querySelector('aPoster').setAttribute('src' , '');
+    document.querySelector('#aPoster').setAttribute('src' , '');
 }
 
 setUpHomepage();
