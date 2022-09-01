@@ -28,6 +28,7 @@ async function getTopAnime(){
     topAnime = await response.json();
     console.log(topAnime);
     topAnime = topAnime.top.slice(0,5);
+    topAnime = JSON.parse
 }
 
 //searches the api for the anime
@@ -58,12 +59,12 @@ function displayHomepageAnime(animeNumber){
     let animeObj = `${animeNumber}`;
     let animeImage = `${animeNumber}` + 'i';
     console.log(animeNumber);
-    console.log(topAnime[animeNumber].url);
-    console.log(topAnime[animeNumber].title);
-    console.log(topAnime[animeNumber].image);
-    document.getElementById(animeObj).setAttribute('href' , topAnime[animeNumber].url);
-    document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber].title);
-    document.getElementById(animeImage).setAttribute('src' , topAnime[animeNumber].image_url);
+    console.log(topAnime.data[animeNumber].url);
+    console.log(topAnime.data[animeNumber].title);
+    console.log(topAnime.data[animeNumber].image);
+    document.getElementById(animeObj).setAttribute('href' , topAnime.data[animeNumber].url);
+    document.getElementById(animeObj).setAttribute('target' , topAnime.data[animeNumber].title);
+    document.getElementById(animeImage).setAttribute('src' , topAnime.data[animeNumber].image_url);
 }
 
 function display0() {
