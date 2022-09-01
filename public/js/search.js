@@ -1,4 +1,4 @@
-const searchBtnEl = document.querySelector('#search-btn');
+let searchBtnEl = document.querySelector('#search-btn');
 const searchInputEl = document.querySelector('#search-input');
 const homepageURL = window.location.href;
 let topAnime;
@@ -27,7 +27,7 @@ function getTopAnime(){
         if (!response.ok) {
             throw response.JSON();
         }
-    topAnime = response.JSON().slice(0,4);
+    topAnime = response.json().slice(0,4);
     })
 }
 
@@ -36,7 +36,7 @@ function searchAnime(searchedAnime) {
     fetch('https://api.jikan.moe/v3/search/anime?q=' + searchedAnime + '&order_by=title&sort=asc&limit=1')
     .then(function(response){
         if (!response.ok) {
-            throw response.JSON();
+            throw response.json();
         }
        searchData = response.JSON;
     })
@@ -60,8 +60,7 @@ function displaySearch() {
 
 //displays the top anime in their locations
 function displayHomepageAnime(animeNumber){
-    const anime = JSON.parse(window.localStorage.getItem('Anime'));
-    let animeObj = '\'#' + animeNumber + '\'';
+    let animeObj = `#${animeNumber}`;
     let animeImage = animeNumber + 'i';
     document.querySelector(animeObj).setAttribute('href' , topAnime[animeNumber.url]);
     document.querySelector(animeObj).setAttribute('target' , topAnime[animeNumber.title]);
