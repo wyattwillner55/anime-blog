@@ -15,9 +15,11 @@ function searchAndDisplay() {
 //function that calls all the relevant functions for setting up the homepage top anime display
 function setUpHomepage() {
     getTopAnime();
-    for (i = 0; i < 4; i++) {
-        displayHomepageAnime(i);
-    }
+    display0();
+    display1(); 
+    display2();
+    display3();
+    display4();
 }
 
 //fetches the top anime from jikan api
@@ -63,6 +65,37 @@ function displayHomepageAnime(animeNumber){
     document.getElementById(animeObj).setAttribute('target' , topAnime[animeNumber].title);
     document.getElementById(animeImage).setAttribute('src' , topAnime[animeNumber].image_url);
 }
+
+function display0() {
+    document.getElementById('0').setAttribute('href' , topAnime[0].url);
+    document.getElementById('0').setAttribute('target' , topAnime[0].title);
+    document.getElementById('0i').setAttribute('src' , topAnime[0].image_url);
+}
+
+function display1() {
+    document.getElementById('1').setAttribute('href' , topAnime[1].url);
+    document.getElementById('1').setAttribute('target' , topAnime[1].title);
+    document.getElementById('1i').setAttribute('src' , topAnime[1].image_url);
+}
+
+function display2() {
+    document.getElementById('2').setAttribute('href' , topAnime[2].url);
+    document.getElementById('2').setAttribute('target' , topAnime[2].title);
+    document.getElementById('2i').setAttribute('src' , topAnime[2].image_url);
+}
+
+function display3() {
+    document.getElementById('3').setAttribute('href' , topAnime[3].url);
+    document.getElementById('3').setAttribute('target' , topAnime[3].title);
+    document.getElementById('3i').setAttribute('src' , topAnime[3].image_url);
+}
+
+function display4() {
+    document.getElementById('4').setAttribute('href' , topAnime[4].url);
+    document.getElementById('4').setAttribute('target' , topAnime[4].title);
+    document.getElementById('4i').setAttribute('src' , topAnime[4].image_url);
+}
+
 
 
 //clears display
