@@ -21,25 +21,17 @@ function setUpHomepage() {
 }
 
 //fetches the top anime from jikan api
-function getTopAnime(){
-    fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
-    .then(function(response){
-        if (!response.ok) {
-            throw response.json();
-        }
-    topAnime = response.JSON.slice(0,4);
-    })
+async function getTopAnime(){
+    const response = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
+    topAnime = await response.json();
+    topAnime = topAnime.slice(0,4);
 }
 
 //searches the api for the anime
-function searchAnime(searchedAnime) {
-    fetch('https://api.jikan.moe/v3/search/anime?q=' + searchedAnime + '&order_by=title&sort=asc&limit=1')
-    .then(function(response){
-        if (!response.ok) {
-            throw response.json();
-        }
-       searchData = response.JSON;
-    })
+async function searchAnime(searchedAnime) {
+    const response = await fetch('https://api.jikan.moe/v3/search/anime?q=' + searchedAnime + '&order_by=title&sort=asc&limit=1')
+       searchData = await response.json();
+    
 }
 
 //replaces unsearchable characters in the string with characters that can be used in a search
