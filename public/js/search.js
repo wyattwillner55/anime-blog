@@ -41,7 +41,18 @@ function displaySearch() {
     document.querySelector('#episodes').textContent = 'Episodes: ' + animeSearch[0].episodes;
     document.querySelector('#malScore').textContent = 'Rating: ' + animeSearch[0].score;
     document.querySelector('#malUrl').setAttribute('href' , animeSearch[0].url);
-    document.querySelector('#malUrl').setAttribute('target' , animeSearch[0].title);
+    document.querySelector('#malUrl').textContent = animeSearch[0].title;
     document.querySelector('#aPoster').setAttribute('src' , animeSearch[0].image_url);
 }
+
+function clearDisplay(){
+    document.querySelector('#aTitle').textContent = '';
+    document.querySelector('#synopsis').textContent = '';
+    document.querySelector('#episodes').textContent = '';
+    document.querySelector('#malScore').textContent = '';
+    document.querySelector('#malUrl').setAttribute('href' , '');
+    document.querySelector('#malUrl').textContent('');
+    document.querySelector('#aPoster').setAttribute('src' , '');
+}
+clearDisplay();
 searchBtnEl.addEventListener('click', searchAndDisplay);
