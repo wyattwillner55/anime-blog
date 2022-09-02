@@ -51,7 +51,7 @@ function clearDisplay(){
     document.querySelector('#episodes').textContent = '';
     document.querySelector('#malScore').textContent = '';
     document.querySelector('#malUrl').setAttribute('href' , '');
-    document.querySelector('#malUrl').textContent('');
+    document.querySelector('#malUrl').textContent = ('');
     document.querySelector('#aPoster').setAttribute('src' , '');
 }
 clearDisplay();
