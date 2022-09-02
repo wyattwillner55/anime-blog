@@ -89,3 +89,4 @@ function clearDisplayData() {
     document.querySelector('#aPoster').setAttribute('src' , '');
 }
 */
+document.querySelector('#search-btn').addEventListener('click', searchAndDisplay());
