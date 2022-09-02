@@ -1,4 +1,4 @@
-let searchBtnEl = document.querySelector('#search-btn');
+let searchBtnEl = document.getElementById('search-btn');
 const searchInputEl = document.querySelector('#search-input');
 const homepageURL = window.location.href;
 let topAnime;
@@ -41,7 +41,7 @@ function searchAnime(searchedAnime) {
             return response.json();
         })
         .then(function(searchedData){
-            window.localStorage.setItem('searchedAnime' , JSON.stringify(searchedData));
+            window.localStorage.setItem('searchedAnime' , JSON.stringify(searchedData.results));
         })
 }
 
