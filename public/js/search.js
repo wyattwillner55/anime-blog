@@ -35,6 +35,7 @@ function filterInput(inputString) {
 //displays the searched anime
 function displaySearch() {
     let animeSearch = JSON.parse(window.localStorage.getItem('searchedAnime'));
+    console.log(animeSearch);
     document.querySelector('#aTitle').textContent = 'Title:' + animeSearch.title;
     document.querySelector('#synopsis').textContent = 'Synopsis:' + animeSearch.synopsis;
     document.querySelector('#episodes').textContent = 'Episodes:' + animeSearch.episodes;
@@ -43,5 +44,4 @@ function displaySearch() {
     document.querySelector('#malUrl').setAttribute('target' , animeSearch.title);
     document.querySelector('#aPoster').setAttribute('src' , animeSearch.image_url);
 }
-
-document.querySelector('#search-btn').addEventListener('click', searchAndDisplay());
+searchBtnEl.addEventListener('click', searchAndDisplay());
