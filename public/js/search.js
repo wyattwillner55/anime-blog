@@ -13,10 +13,10 @@ function searchAndDisplay() {
 }
 
 //function that calls all the relevant functions for setting up the homepage top anime display
-function setUpHomepage() {
+/*function setUpHomepage() {
     getTopAnime();
     
-}
+}*/
 
 //fetches the top anime from jikan api
 async function getTopAnime(){
@@ -79,5 +79,4 @@ function clearDisplayData() {
     document.querySelector('#aPoster').setAttribute('src' , '');
 }
 
-setUpHomepage();
 searchBtnEl.addEventListener('click', searchAndDisplay());
