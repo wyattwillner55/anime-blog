@@ -16,6 +16,7 @@ function searchAndDisplay() {
 
 //searches the api for the anime
 function searchAnime(searchedAnime) {
+    console.log(searchedAnime);
     fetch('https://api.jikan.moe/v3/search/anime?q=' + searchedAnime + '&order_by=title&sort=asc&limit=1')
         .then(function(response){
             if (!response.ok) {
