@@ -42,17 +42,7 @@ function displaySearch() {
     document.querySelector('#malUrl').setAttribute('href' , animeSearch[0].url);
     document.querySelector('#malUrl').textContent = animeSearch[0].title;
     document.querySelector('#aPoster').setAttribute('src' , animeSearch[0].image_url);
-}
-
-function clearDisplay(){
-    document.querySelector('#aTitle').textContent = '';
-    document.querySelector('#synopsis').textContent = '';
-    document.querySelector('#episodes').textContent = '';
-    document.querySelector('#malScore').textContent = '';
-    document.querySelector('#malUrl').setAttribute('href' , '');
-    document.querySelector('#malUrl').textContent = ('');
-    document.querySelector('#aPoster').setAttribute('src' , '');
     window.localStorage.removeItem('searchedAnime');
 }
-clearDisplay();
+
 searchBtnEl.addEventListener('click', searchAndDisplay);
