@@ -42,7 +42,6 @@ function displaySearch() {
     document.querySelector('#malUrl').setAttribute('href' , animeSearch[0].url);
     document.querySelector('#malUrl').textContent = animeSearch[0].title;
     document.querySelector('#aPoster').setAttribute('src' , animeSearch[0].image_url);
-    window.localStorage.removeItem('searchedAnime');
 }
 
 searchBtnEl.addEventListener('click', searchAndDisplay);
