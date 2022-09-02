@@ -1,8 +1,5 @@
 let searchBtnEl = document.getElementById('search-btn');
 const searchInputEl = document.querySelector('#search-input');
-const homepageURL = window.location.href;
-let topAnime;
-let searchData;
 
 //function that calls the relevant functions for searching an anime and displaying it
 //and assigns the homepage as the location when search button is pressed
@@ -39,11 +36,11 @@ function displaySearch() {
     let animeSearch = JSON.parse(window.localStorage.getItem('searchedAnime'));
     console.log(animeSearch);
     document.querySelector('#aTitle').textContent = 'Title:' + animeSearch.title;
-    document.querySelector('#synopsis').textContent = 'Synopsis:' + animeSearch.synopsis;
-    document.querySelector('#episodes').textContent = 'Episodes:' + animeSearch.episodes;
-    document.querySelector('#malScore').textContent = 'Rating:' + animeSearch.score;
-    document.querySelector('#malUrl').setAttribute('href' , animeSearch.url);
-    document.querySelector('#malUrl').setAttribute('target' , animeSearch.title);
-    document.querySelector('#aPoster').setAttribute('src' , animeSearch.image_url);
+    document.querySelector('#synopsis').textContent = 'Synopsis:' + animeSearch[0].synopsis;
+    document.querySelector('#episodes').textContent = 'Episodes:' + animeSearch[0].episodes;
+    document.querySelector('#malScore').textContent = 'Rating:' + animeSearch[0].score;
+    document.querySelector('#malUrl').setAttribute('href' , animeSearch[0].url);
+    document.querySelector('#malUrl').setAttribute('target' , animeSearch[0].title);
+    document.querySelector('#aPoster').setAttribute('src' , animeSearch[0].image_url);
 }
 searchBtnEl.addEventListener('click', searchAndDisplay);
