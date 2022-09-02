@@ -45,4 +45,4 @@ function displaySearch() {
     document.querySelector('#malUrl').setAttribute('target' , animeSearch.title);
     document.querySelector('#aPoster').setAttribute('src' , animeSearch.image_url);
 }
-searchBtnEl.addEventListener('submit', searchAndDisplay());
+searchBtnEl.addEventListener('click', searchAndDisplay);
