@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 let searchBtnEl = document.querySelector('#search-btn');
 const searchInputEl = document.querySelector('#search-input');
 const homepageURL = window.location.href;
