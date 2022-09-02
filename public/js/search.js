@@ -4,7 +4,6 @@ const searchInputEl = document.querySelector('#search-input');
 //function that calls the relevant functions for searching an anime and displaying it
 //and assigns the homepage as the location when search button is pressed
 function searchAndDisplay() {
-    window.localStorage.removeItem('searchedAnime');
     console.log('search and display');
     searchAnime(filterInput(searchInputEl.value));
     displaySearch();
@@ -53,6 +52,7 @@ function clearDisplay(){
     document.querySelector('#malUrl').setAttribute('href' , '');
     document.querySelector('#malUrl').textContent = ('');
     document.querySelector('#aPoster').setAttribute('src' , '');
+    window.localStorage.removeItem('searchedAnime');
 }
 clearDisplay();
 searchBtnEl.addEventListener('click', searchAndDisplay);
