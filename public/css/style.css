@@ -71,6 +71,10 @@ grid-column-gap: 150px;
     font-weight: bold;
 }
 
+p{
+    padding: 10px;
+}
+
 /* above code is css for the homepage handlebar */
 
 .TXT{
