@@ -7,6 +7,7 @@ let searchData;
 //function that calls the relevant functions for searching an anime and displaying it
 //and assigns the homepage as the location when search button is pressed
 function searchAndDisplay() {
+    console.log('search and display');
     searchAnime(filterInput(searchInputEl.value));
     displaySearch();
 }
@@ -44,4 +45,4 @@ function displaySearch() {
     document.querySelector('#malUrl').setAttribute('target' , animeSearch.title);
     document.querySelector('#aPoster').setAttribute('src' , animeSearch.image_url);
 }
-searchBtnEl.addEventListener('click', searchAndDisplay());
+searchBtnEl.addEventListener('submit', searchAndDisplay());
